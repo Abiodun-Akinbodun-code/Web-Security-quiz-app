@@ -1,0 +1,87 @@
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --accent:#0b5cff;
+  --muted:#6b7280;
+  --success:#16a34a;
+  --danger:#ef4444;
+  --glass: rgba(255,255,255,0.8);
+  --radius:12px;
+  --max-width:920px;
+  /* --max-height:100vh; */
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,var(--bg),#eef2ff 80%);
+  color:#111827;
+  display:flex;
+  justify-content:center;
+  padding:24px;
+}
+
+.app{width:100%;max-width:var(--max-width)}
+
+.app-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+/* .app-header h1{margin:0;font-size:1.25rem}
+.meta{display:flex;gap:12px;align-items:center}
+.timer{font-weight:600;color:var(--muted)}
+.score-preview{font-size:0.95rem;color:var(--muted)} */
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:0 6px 20px rgba(12,20,50,0.08);
+  margin-bottom:18px;
+}
+
+.progress-wrap{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.progress-bar{flex:1;height:12px;background:#eef2ff;border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#00b4ff)}
+.progress-text{min-width:84px;text-align:right;font-size:0.9rem;color:var(--muted)}
+
+.quiz-form{display:flex;flex-direction:column;gap:14px}
+.question-card{
+  padding:12px;border-radius:10px;border:1px solid #f1f5f9;background:var(--glass);
+}
+.question-title{margin:0 0 8px 0;font-weight:600}
+.options{display:flex;flex-direction:column;gap:8px}
+.option label{cursor:pointer;padding:8px;border-radius:8px;display:block;border:1px solid transparent}
+.option input{margin-right:10px}
+
+.option input:checked + .label-text,
+.option input:checked + span{
+  background:rgba(11,92,255,0.06);
+  border-color:rgba(11,92,255,0.12);
+}
+
+.nav-row{display:flex;gap:10px}
+.btn{
+  padding:10px 14px;border-radius:10px;border:none;background:var(--accent);color:white;cursor:pointer;font-weight:600;
+}
+.btn:disabled{opacity:0.5;cursor:not-allowed}
+.btn.outline{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.btn.submit{background:var(--success)}
+
+.actions{display:flex;gap:10px;margin-top:8px}
+.result{padding:12px;border-radius:10px;margin-top:12px;font-weight:700;text-align:center}
+
+.history{max-width:520px}
+.history h2{margin:0 0 8px 0;font-size:1rem}
+#history-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.history-item{padding:10px;border-radius:8px;border:1px solid #eef2ff;background:white;display:flex;justify-content:space-between;align-items:center}
+
+@media (max-width:640px){
+  .question-card{padding:10px}
+  .app-header{flex-direction:column;align-items:flex-start;gap:8px}
+}

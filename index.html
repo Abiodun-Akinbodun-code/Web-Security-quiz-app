@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz App — 2 per page</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h3>Quiz Challenge</h3>
+      <div class="meta">
+        <div id="timer" class="timer">Time: <span id="time">00:00</span></div>
+        <div id="score-preview" class="score-preview" aria-live="polite"></div>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="progress-wrap">
+        <div id="progress" class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div id="progress-text" class="progress-text">0 / 50</div>
+      </div>
+
+      <form id="quiz-form" autocomplete="off" class="quiz-form">
+        <div id="questions-container"></div>
+        <div class="nav-row">
+          <button type="button" id="prev-btn" class="btn" disabled>Previous</button>
+          <button type="button" id="next-btn" class="btn">Next</button>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="submit-btn" class="btn submit">Submit Quiz</button>
+          <button type="button" id="try-again-btn" class="btn outline" style="display:none">Try Again</button>
+        </div>
+      </form>
+
+      <div id="result" class="result" aria-live="polite" style="display:none"></div>
+    </section>
+
+    <section class="history card" id="history-card">
+      <h2>Past Results</h2>
+      <ul id="history-list"></ul>
+    </section>
+
+    <footer class="app-footer">
+      <small>Built with ❤ — refresh to reshuffle</small>
+    </footer>
+  </main>
+
+  <script src="Questions.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
